@@ -1,5 +1,7 @@
 package com.example.appapirestloteria;
 
+import java.util.Objects;
+
 public class Decimo {
 
     String numero;
@@ -34,5 +36,21 @@ public class Decimo {
 
     public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        // Cast del objeto a Decimo
+        Decimo otroSorteo = (Decimo) obj;
+
+        // Comparación basada en el datoString
+        return Objects.equals(numero, otroSorteo.numero);
     }
 }
